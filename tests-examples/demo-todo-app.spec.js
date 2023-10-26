@@ -251,7 +251,7 @@ test.describe('Editing', () => {
   test('should cancel edits on escape', async ({ page }) => {
     const todoItems = page.getByTestId('todo-item');
     await todoItems.nth(1).dblclick();
-    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('buy some sausages');
+    await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('buy asome sausages');
     await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).press('Escape');
     await expect(todoItems).toHaveText(TODO_ITEMS);
   });

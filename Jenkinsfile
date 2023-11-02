@@ -4,7 +4,7 @@ pipeline {
         stage("run test") {
             steps { 
                 echo 'executing test...'
-                build('/job/PW-Project/') {
+                build('PW-Project') {
                 }
             }
         }

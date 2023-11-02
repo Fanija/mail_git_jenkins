@@ -1,5 +1,4 @@
 pipeline {
-
     agent any 
     stages {
         stage("run test") {
@@ -12,5 +11,4 @@ pipeline {
                 }
             }
         }
-
 }

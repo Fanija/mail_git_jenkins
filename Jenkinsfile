@@ -4,7 +4,7 @@ pipeline {
         stage("run test") {
             steps { 
                 echo 'executing test...'
-                build('PW-Project') {
+                build('http://localhost:8080/job/PW-Project/') {
                 }
             }
         }

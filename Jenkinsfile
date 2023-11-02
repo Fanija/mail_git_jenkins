@@ -5,7 +5,7 @@ pipeline {
             steps { 
                 echo 'executing test...'
                 nodejs('NodeJS') {
-                    bash 'npm install'
+                    build 'PW-Project'
                 }
             }
         }

@@ -4,7 +4,7 @@ pipeline {
         stage("run test") {
             steps { 
                 echo 'executing test...'
-                build('PW-Project') {
+                nodejs('NodeJS') {
                 }
             }
         }

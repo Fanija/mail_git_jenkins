@@ -5,7 +5,7 @@ pipeline {
             steps { 
                 echo 'executing test...'
                 nodejs('NodeJS') {
-                    batch 'npm install'
+                    bash 'npm install'
                 }
             }
         }

@@ -1,28 +1,15 @@
 pipeline {
 
     agent any 
-
     stages {
-
-        stage("build") {
-
+        stage("run test") {
             steps { 
-                echo 'building application...'
+                echo 'executing npm...'
+                nodejs('NodeJS-21.0.0') {
+                    batch 'npm install'
+                    batch 'npx playwright install'
+                    batch 'set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml & npx playwright test --reporter=junit'
+                }
             }
         }
-  
-        stage("test") {
-
-            steps { 
-                echo 'testing application...'
-            }
-        }
-  
-        stage("deploy") {
-
-            steps { 
-                echo 'deploying application...'
-            }
-        }
-    }
 }

@@ -11,6 +11,9 @@ pipeline {
 npx playwright test --reporter=junit'''
                     bat 'C:\\Python38\\Scripts\\pip install junit2html'
                     bat 'C:\\Python38\\Scripts\\junit2html results.xml results.html'
+                    junit allowEmptyResults: true, testResults: 'results.xml'
+                    emailext attachLog: true, attachmentsPattern: 'results.html', body: '${FILE, path="results.html"}', subject: 'Test Results', to: 'ntestntestovski@gmail.com'
+                    
                 }
             }
         }

@@ -5,9 +5,9 @@ pipeline {
             steps { 
                 echo 'executing npm...'
                 nodejs('NodeJS') {
-                    batch 'npm install'
-                    batch 'npx playwright install'
-                    batch 'set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml & npx playwright test --reporter=junit'
+                    sh 'npm install'
+                    sh 'npx playwright install'
+                    sh 'set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml & npx playwright test --reporter=junit'
                 }
             }
         }
